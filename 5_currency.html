@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <title>Currency calculator</title>
+    <link rel="stylesheet" href="currency_styles.css">
+  </head>
+  <script>
+    function convert() {
+       let n=parseInt(document.getElementById("n").value)
+       let cur1=document.getElementById("c1").value
+       let cur2=document.getElementById("c2").value
+
+let res=0
+       if(cur1==="rupee" && cur2==="dollar"){
+       
+        res= n * 0.83 ;
+    
+       }
+       if(cur1==="rupee" && cur2==="euro"){
+       
+       res= n * 0.011 ;
+      }
+      if(cur1==="dollar" && cur2==="rupee"){
+       
+       res= n * 81.73 ;
+      }
+      
+      if(cur1==="dollar" && cur2==="euro"){
+       
+       res= n * 0.89;
+      }
+      
+      if(cur1==="euro" && cur2==="rupee"){
+       
+       res= n * 91.62;
+      }
+      
+      if(cur1==="euro" && to==="dollar"){
+       res= n * 1.12;
+      }
+      document.getElementById("p1").innerText=res
+    }
+  </script>
+
+  <body>
+    <div>   
+    <h1>Currency Converter</h1>
+    <input type="number" id="n" placeholder="currency" />
+    <label for="currency" > from:</label>
+    <select name="currency" id="c1">
+      <option value="select">select</option>
+      <option value="rupee">&#8377 (rupee)</option>
+      <option value="dollar">$(dollar)</option>
+      <option value="euro"> &#8364 (euro)</option>
+    </select>
+
+    <label for="currency" > to:</label>
+    <select name="currency" id="c2">
+      <option value="select">select</option>
+      <option value="rupee">&#8377 (rupee)</option>
+      <option value="dollar">$(dollar)</option>
+      <option value="euro"> &#8364 (euro)</option>
+    </select>
+    <p id="p1"></p>
+    <button onclick="convert()">covert</button>
+</div>
+ 
+  </body>
+</html>
